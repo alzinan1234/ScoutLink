@@ -47,8 +47,8 @@ const navItems = [
     icon: Settings,
     hasDropdown: true,
     subItems: [
-      { name: "Profile Settings", href: "/admin/settings/profile" },
-      { name: "Account Settings", href: "/admin/settings/account" },
+      { name: "Profile Settings", href: "/admin/settings/message" },
+      // { name: "Account Settings", href: "/admin/settings/account" },
     ],
   },
 ];

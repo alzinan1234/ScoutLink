@@ -87,7 +87,7 @@ const PerformanceHeatMap = () => {
         {/* Map Visualization with Interactive Zones */}
         <div className="relative w-full aspect-[21/9] bg-[#0B0E29] rounded-[24px] overflow-hidden border border-white/5 group">
           <img 
-            src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&q=80&w=2000" 
+            src="https://img.freepik.com/free-vector/abstract-technology-particle-background_23-2148426649.jpg" 
             className="w-full h-full object-cover opacity-30 grayscale transition-transform duration-700 group-hover:scale-105" 
             alt="Heat Map Background"
           />

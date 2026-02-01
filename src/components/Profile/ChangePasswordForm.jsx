@@ -7,11 +7,11 @@ export default function ChangePasswordForm() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // 'success' or 'error'
+  const [messageType, setMessageType] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage(""); // Clear previous messages
+    setMessage("");
     setMessageType("");
 
     if (newPassword !== confirmedPassword) {
@@ -20,8 +20,6 @@ export default function ChangePasswordForm() {
       return;
     }
 
-    // In a real application, you would send this data to your backend API
-    // For demonstration purposes, we'll simulate a successful change
     setTimeout(() => {
       setMessage("Password changed successfully!");
       setMessageType("success");
@@ -33,57 +31,49 @@ export default function ChangePasswordForm() {
 
   return (
     <form onSubmit={handleSubmit} className="p-6 flex flex-col items-center">
-      {" "}
-      {/* Added flex-col and items-center to center form fields */}
       <div className="mb-4 w-full max-w-[982px]">
-        {" "}
-        {/* Constrain div width for centering */}
         <label
           htmlFor="currentPassword"
-          className="block text-black text-sm font-bold mb-2" // Changed text to black
+          className="block text-white text-sm font-bold mb-2"
         >
           Current Password
         </label>
         <input
           type="password"
           id="currentPassword"
-          className="shadow appearance-none rounded w-full h-[50px] py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border border-[#C3C3C3] bg-gray-100" // Changed text and background of input
+          className="shadow appearance-none rounded w-full h-[50px] py-3 px-4 text-white leading-tight focus:outline-none focus:shadow-outline border border-white/10 bg-white/5"
           value={currentPassword}
           onChange={(e) => setCurrentPassword(e.target.value)}
           required
         />
       </div>
       <div className="mb-4 w-full max-w-[982px]">
-        {" "}
-        {/* Constrain div width for centering */}
         <label
           htmlFor="newPassword"
-          className="block text-black text-sm font-bold mb-2" // Changed text to black
+          className="block text-white text-sm font-bold mb-2"
         >
           New Password
         </label>
         <input
           type="password"
           id="newPassword"
-          className="shadow appearance-none rounded w-full h-[50px] py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border border-[#C3C3C3] bg-gray-100" // Changed text and background of input
+          className="shadow appearance-none rounded w-full h-[50px] py-3 px-4 text-white leading-tight focus:outline-none focus:shadow-outline border border-white/10 bg-white/5"
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
           required
         />
       </div>
       <div className="mb-6 w-full max-w-[982px]">
-        {" "}
-        {/* Constrain div width for centering */}
         <label
           htmlFor="confirmedPassword"
-          className="block text-black text-sm font-bold mb-2" // Changed text to black
+          className="block text-white text-sm font-bold mb-2"
         >
           Confirmed Password
         </label>
         <input
           type="password"
           id="confirmedPassword"
-          className="shadow appearance-none rounded w-full h-[50px] py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border border-[#C3C3C3] bg-gray-100" // Changed text and background of input
+          className="shadow appearance-none rounded w-full h-[50px] py-3 px-4 text-white leading-tight focus:outline-none focus:shadow-outline border border-white/10 bg-white/5"
           value={confirmedPassword}
           onChange={(e) => setConfirmedPassword(e.target.value)}
           required
@@ -92,7 +82,7 @@ export default function ChangePasswordForm() {
       {message && (
         <p
           className={`text-center mb-4 ${
-            messageType === "success" ? "text-green-500" : "text-red-500"
+            messageType === "success" ? "text-green-400" : "text-red-400"
           }`}
         >
           {message}
@@ -101,7 +91,7 @@ export default function ChangePasswordForm() {
       <div className="flex items-center justify-center mt-6 md:w-[982px]">
         <button
           type="submit"
-          className="bg-[#DD0F14] hover:bg-opacity-80 text-white font-bold w-full py-3 px-4 rounded-[4px] focus:outline-none focus:shadow-outline"
+          className="bg-[#2444FF] hover:bg-opacity-80 text-white font-bold w-full py-3 px-4 rounded-[4px] focus:outline-none focus:shadow-outline transition-all"
         >
           Save Changes
         </button>

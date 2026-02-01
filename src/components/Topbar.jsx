@@ -5,18 +5,21 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Menu } from "lucide-react";
 
-export default function Topbar({ onBellClick, toggleMobileMenu }) {
+export default function Topbar({ toggleMobileMenu }) {
   const router = useRouter();
 
   const handleUserImageClick = () => {
-    router.push("/investor-admin/settings/profile"); 
+    router.push("/admin/profile");
+  };
+
+  const handleNotificationClick = () => {
+    router.push("/admin/notifications");
   };
 
   return (
     <header className="flex items-center justify-between lg:justify-end bg-[#19205A] p-4 border-b border-white/10 shadow-md">
-      
       {/* Mobile Menu Toggle (Visible only on small screens) */}
-      <button 
+      <button
         onClick={toggleMobileMenu}
         className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
       >
@@ -27,7 +30,7 @@ export default function Topbar({ onBellClick, toggleMobileMenu }) {
         {/* Notification Bell */}
         <div
           className="relative cursor-pointer flex items-center gap-2 bg-white/10 hover:bg-white/20 rounded-[38px] py-[5px] px-[8px] transition-all"
-          onClick={onBellClick}
+          onClick={handleNotificationClick}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
