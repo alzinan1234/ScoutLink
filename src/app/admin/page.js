@@ -1,6 +1,7 @@
 import EarningSummaryChart from "@/components/EarningSummaryChart";
 import MetricCard from "@/components/MetricCard";
-import NewReservationTable from "@/components/NewReservationTable";
+import PendingActionsTable from "@/components/PendingActionsTabile";
+import NewReservationTable from "@/components/PendingActionsTabile";
 
 const Admin = () => {
   const months = [
@@ -19,16 +20,14 @@ const Admin = () => {
   ];
   return (
     <>
-      <div className="bg-white w-full min-h-screen">
+      <div className="bg-[#010642] w-full min-h-screen">
         <div className=" p-4">
-          {/* Total User Card */}
-          <MetricCard
-            title="Total Revenue"
-            value={22500}
-            percentageChange={4}
-            percentageDirection="up"
-            timePeriodData={months}
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <MetricCard title="Total User" value={287905} percentageChange={5} />
+  <MetricCard title="Daily Visitors" value={1200} percentageChange={3.2} />
+  <MetricCard title="Monthly Visitors" value={25600} percentageChange={8.7} />
+  <MetricCard title="New Videos" value={345} percentageChange={8} />
+</div>  
         </div>
 
         <div className=" p-4">
@@ -39,9 +38,9 @@ const Admin = () => {
           </div>
         </div>
 
-        {/* <div className="p-4">
-          <NewReservationTable />
-        </div> */}
+        <div className="p-4">
+          <PendingActionsTable />
+        </div>
       </div>
     </>
   );
