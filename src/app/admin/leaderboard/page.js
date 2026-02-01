@@ -1,9 +1,10 @@
+import Leaderboard from '@/components/Leaderboard/Leaderboard'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-       <h1 className="text-2xl font-bold">Leaderboard Comming Soon...........</h1>
+       <Leaderboard />
     </div>
   )
 }
